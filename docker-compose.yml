@@ -1,0 +1,18 @@
+version: "2"
+services:
+  bot:
+    build: .
+    image: python_bot
+    restart: always
+    command: bash -c "python main.py"
+    volumes:
+      - .:/app
+  api:
+    build: .
+    image: python_bot
+    restart: always
+    command: bash -c "python main.py"
+    volumes:
+      - .:/app
+    ports:
+      - 5000:5000
